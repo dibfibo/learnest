@@ -10,6 +10,7 @@ import {
 } from '@nestjs/common';
 import { AbstractSongs } from './songs.abstract';
 import { SongsService } from './songs.service';
+import { CreateSongDto } from './dto';
 
 @Controller('songs')
 export class SongsController extends AbstractSongs {
@@ -18,7 +19,7 @@ export class SongsController extends AbstractSongs {
   }
 
   @Post()
-  public create(@Body() dto: any) {
+  public create(@Body() dto: CreateSongDto) {
     return this.Songs.create(dto);
   }
 
