@@ -4,7 +4,7 @@ import { AppService } from './app.service';
 import { SongsModule } from './songs/songs.module';
 
 /**
- * Video at 07:00
+ * Video at 30:00
  */
 
 @Module({
