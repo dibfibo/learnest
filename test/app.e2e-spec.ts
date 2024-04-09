@@ -21,10 +21,10 @@ describe('AppController (e2e)', () => {
   describe('songs', () => {
     it('should create song', () => {
       const dto = <CreateSongDto>{
-        title: 'fdsgdf',
-        artists: ['fghfg'],
-        releaseDate: '2022-09-29' as any,
-        duration: '04:44' as any,
+        title: 'Machine Gun Funk',
+        artists: ['The Notorius B.I.G.'],
+        releaseDate: '1994-09-13' as any,
+        duration: '04:15' as any,
       };
 
       return request(app.getHttpServer())
