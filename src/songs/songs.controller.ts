@@ -4,6 +4,7 @@ import {
   Delete,
   Get,
   Param,
+  ParseIntPipe,
   Patch,
   Post,
   Put,
@@ -29,7 +30,7 @@ export class SongsController extends AbstractSongs {
   }
 
   @Get(':id')
-  public findOne(@Param('id') id: number) {
+  public findOne(@Param('id', ParseIntPipe) id: number) {
     return this.Songs.findOne(id);
   }
 
