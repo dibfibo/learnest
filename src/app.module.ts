@@ -11,7 +11,7 @@ import { User } from './users/entity';
 import { Artist } from './artists/entity';
 
 /**
- * Video at 56:00
+ * Video at 1:28:00
  */
 
 @Module({
