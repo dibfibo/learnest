@@ -1,4 +1,4 @@
-import { AbstractSongs } from './songs.abstract';
+import { AbstractSong } from './song.abstract';
 
 describe('Songs', () => {
   it('should be defined', () => {

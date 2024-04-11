@@ -1,6 +1,12 @@
-import { Song } from "src/songs/entity";
-import { User } from "src/users/entity";
-import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Song as Song } from 'src/song/entity';
+import { User } from 'src/user/entity';
+import {
+  Column,
+  Entity,
+  ManyToOne,
+  OneToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 
 @Entity('playlist')
 export class Playlist {

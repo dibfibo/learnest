@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
-import { AbstractSongs } from './songs.abstract';
+import { AbstractSong } from './song.abstract';
 import { CreateSongDto } from './dto';
 
 @Injectable()
-export class SongsService extends AbstractSongs {
+export class SongService extends AbstractSong {
   public readonly songs = [];
 
   public create(dto: CreateSongDto) {

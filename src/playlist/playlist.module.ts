@@ -1,4 +1,14 @@
 import { Module } from '@nestjs/common';
+import { PlaylistController } from './playlist.controller';
+import { PlaylistService } from './playlist.service';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { Playlist } from './entity';
+import { Song } from 'src/song/entity';
+import { User } from 'src/user/entity';
 
-@Module({})
+@Module({
+  imports: [TypeOrmModule.forFeature([Playlist, Song, User])],
+  controllers: [PlaylistController],
+  providers: [PlaylistService],
+})
 export class PlaylistModule {}

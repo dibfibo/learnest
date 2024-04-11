@@ -1,13 +1,20 @@
-import { Artist } from "src/artists/entity";
-import { Playlist } from "src/playlist/entity";
-import { Column, Entity, JoinTable, ManyToMany, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Artist } from 'src/artist/entity';
+import { Playlist } from 'src/playlist/entity';
+import {
+  Column,
+  Entity,
+  JoinTable,
+  ManyToMany,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 
 @Entity('song')
 export class Song {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column('string')
+  @Column()
   title: string;
 
   @Column('date')

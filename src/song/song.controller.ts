@@ -9,13 +9,13 @@ import {
   Post,
   Put,
 } from '@nestjs/common';
-import { AbstractSongs } from './songs.abstract';
-import { SongsService } from './songs.service';
+import { AbstractSong } from './song.abstract';
+import { SongService } from './song.service';
 import { CreateSongDto } from './dto';
 
 @Controller('songs')
-export class SongsController extends AbstractSongs {
-  constructor(private Songs: SongsService) {
+export class SongController extends AbstractSong {
+  constructor(private Songs: SongService) {
     super();
   }
 

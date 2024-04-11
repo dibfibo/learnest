@@ -1,4 +1,4 @@
-export abstract class AbstractSongs {
+export abstract class AbstractSong {
   public abstract create(...args);
   public abstract findAll(...args);
   public abstract findOne(...args);
