@@ -1,12 +1,14 @@
 import { In, Repository } from 'typeorm';
 import { from } from 'rxjs';
 import { SongEntity } from '.';
-import { forwardRef, Inject, Injectable } from '@nestjs/common';
-import { InjectRepository } from '@nestjs/typeorm';
+import { Injectable } from '@nestjs/common';
+import { RepoService } from 'src/@common/repo';
 
 @Injectable()
-export class SongRepository {
-  constructor(private repository: Repository<SongEntity>) {}
+export class SongRepository extends RepoService<SongEntity> {
+  constructor(protected repository: Repository<SongEntity>) {
+    super(repository);
+  }
 
   createSong(song: SongEntity) {
     return from(this.repository.save(song));
@@ -26,7 +28,7 @@ export class SongRepository {
     );
   }
 
-  getSongsByIds(ids: number[]) {
+  findByIds(ids: number[]) {
     return from(this.repository.findBy({ id: In(ids) }));
   }
 }

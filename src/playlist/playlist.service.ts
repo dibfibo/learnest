@@ -5,14 +5,14 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Playlist } from './entity';
 import { In, Repository } from 'typeorm';
 import { User } from 'src/user/entity';
-import { from, forkJoin, switchMap, map, of, Observable } from 'rxjs';
-import { SongEntity } from 'src/song/repository';
+import { from, forkJoin, switchMap, map, of } from 'rxjs';
+import { SongEntity, SongRepository } from 'src/song/repository';
 
 @Injectable()
 export class PlaylistService extends PlaylistAbstract {
   constructor(
     @InjectRepository(Playlist) private Playlist: Repository<Playlist>,
-    @InjectRepository(SongEntity) private Song: Repository<SongEntity>,
+    @InjectRepository(SongEntity) private Song: SongRepository,
     @InjectRepository(User) private User: Repository<User>,
   ) {
     super();
@@ -24,7 +24,7 @@ export class PlaylistService extends PlaylistAbstract {
       switchMap((p) =>
         forkJoin({
           playlist: of(p),
-          songs: this.Song.findBy({ id: In(dto.songs) }),
+          songs: this.Song.findByIds(dto.songs),
           user: this.User.findOneBy({ id: dto.user }),
         }),
       ),

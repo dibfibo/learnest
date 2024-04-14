@@ -8,7 +8,6 @@ import { Playlist } from './playlist/entity';
 import { User } from './user/entity';
 import { Artist } from './artist/entity';
 import { SongEntity } from './song/repository';
-import { SongRepositoryModule } from './song/repository/song.module';
 
 /**
  * Video at 1:32:00
