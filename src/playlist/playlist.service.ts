@@ -6,7 +6,7 @@ import { Playlist } from './entity';
 import { In, Repository } from 'typeorm';
 import { User } from 'src/user/entity';
 import { from, forkJoin, switchMap, map, of } from 'rxjs';
-import { SongEntity, SongRepository } from 'src/song/repository';
+import { SongEntity, SongRepository } from 'src/song/repo';
 
 @Injectable()
 export class PlaylistService extends PlaylistAbstract {

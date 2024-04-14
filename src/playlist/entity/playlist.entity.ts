@@ -1,4 +1,4 @@
-import { SongEntity } from 'src/song/repository';
+import { SongEntity } from 'src/song/repo';
 import { User } from 'src/user/entity';
 import {
   Column,

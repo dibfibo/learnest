@@ -5,7 +5,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { In, Repository } from 'typeorm';
 import { forkJoin, from, of, switchMap } from 'rxjs';
 import { Artist } from 'src/artist/entity';
-import { SongEntity, SongRepository } from './repository';
+import { SongEntity, SongRepository } from './repo';
 
 @Injectable()
 export class SongService extends AbstractSong {

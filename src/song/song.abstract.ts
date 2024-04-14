@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
 import { CreateSongDto } from './dto';
-import { SongEntity } from './repository';
+import { SongEntity } from './repo';
 
 export abstract class AbstractSong {
   public abstract create(dto: CreateSongDto): Observable<SongEntity>;

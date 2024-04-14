@@ -1,6 +1,8 @@
 import { Module, DynamicModule } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { EntityClassOrSchema } from '@nestjs/typeorm/dist/interfaces/entity-class-or-schema.type';
+import { RepoService } from './repo.service';
+import { Repository } from 'typeorm';
 
 @Module({})
 export class RepoModule {
@@ -14,6 +16,7 @@ export class RepoModule {
     const module: DynamicModule = {
       module: RepoModule,
       imports: [feature],
+      providers: [RepoService<T>, Repository<T>],
       exports: [feature],
     };
 

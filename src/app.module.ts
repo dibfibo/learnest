@@ -7,7 +7,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Playlist } from './playlist/entity';
 import { User } from './user/entity';
 import { Artist } from './artist/entity';
-import { SongEntity } from './song/repository';
+import { SongEntity } from './song/repo';
 
 /**
  * Video at 1:32:00
