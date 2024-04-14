@@ -1,14 +1,14 @@
 import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { SongModule } from './song/song.module';
 import { LoggerMiddleware } from './@common/middleware/logger/logger.middleware';
-import { SongService } from './song/song.service';
 import { PlaylistModule } from './playlist/playlist.module';
 import { UserModule } from './user/user.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Playlist } from './playlist/entity';
-import { Song } from './song/entity';
 import { User } from './user/entity';
 import { Artist } from './artist/entity';
+import { SongEntity } from './song/repository';
+import { SongRepositoryModule } from './song/repository/song.module';
 
 /**
  * Video at 1:32:00
@@ -23,7 +23,7 @@ import { Artist } from './artist/entity';
       port: 5432,
       username: 'postgres',
       password: 'root',
-      entities: [Song, Artist, User, Playlist],
+      entities: [SongEntity, Artist, User, Playlist],
       synchronize: true,
     }),
     SongModule,

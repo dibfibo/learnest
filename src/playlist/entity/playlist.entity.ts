@@ -1,4 +1,4 @@
-import { Song as Song } from 'src/song/entity';
+import { SongEntity } from 'src/song/repository';
 import { User } from 'src/user/entity';
 import {
   Column,
@@ -16,8 +16,8 @@ export class Playlist {
   @Column()
   name: string;
 
-  @OneToMany(() => Song, (song) => song.playlist)
-  songs: Song[];
+  @OneToMany(() => SongEntity, (song) => song.playlist)
+  songs: SongEntity[];
 
   @ManyToOne(() => User, (user) => user.playlists)
   user: User;

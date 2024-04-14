@@ -1,4 +1,4 @@
-import { Song } from 'src/song/entity';
+import { SongEntity } from 'src/song/repository';
 import { User } from 'src/user/entity';
 import {
   Entity,
@@ -17,6 +17,6 @@ export class Artist {
   @JoinColumn()
   user: User;
 
-  @ManyToMany(() => Song, (song) => song.artists)
-  songs: Song[];
+  @ManyToMany(() => SongEntity, (song) => song.artists)
+  songs: SongEntity[];
 }

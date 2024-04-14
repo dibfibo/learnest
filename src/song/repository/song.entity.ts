@@ -1,3 +1,4 @@
+import { IsOptional, IsString } from 'class-validator';
 import { Artist } from 'src/artist/entity';
 import { Playlist } from 'src/playlist/entity';
 import {
@@ -9,8 +10,8 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 
-@Entity('song')
-export class Song {
+@Entity('songs')
+export class SongEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -29,4 +30,8 @@ export class Song {
 
   @ManyToOne(() => Playlist, (playlist) => playlist.songs)
   playlist: Playlist;
+
+  @IsString()
+  @IsOptional()
+  lyrics: string;
 }
